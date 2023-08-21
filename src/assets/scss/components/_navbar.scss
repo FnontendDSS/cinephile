@@ -1,0 +1,107 @@
+.navbar{
+  width: 100%;
+  background: rgba(20, 20, 20, 0.5);
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  z-index: 100;
+  &::before{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    content:'';
+    z-index: -1;
+  }
+  &-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__logo{
+      padding: 25px 0;
+      img{
+        width: 90px;
+      }
+    }
+    &__list{
+      display: flex;
+      align-items: center;
+      position: relative;
+      @include media(992){
+        max-width: 320px;
+        width: 100%;
+        height: 100vh;
+        background: #232323;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        left: 0;
+        top: 0;
+        transform: translateX(-330px);
+      }
+      a{
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+        color: rgba(255, 255, 255, 0.6);
+        padding: 34px 15px;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        overflow: hidden;
+        @include media(992){
+          padding: 15px;
+        }
+        &.router-link-active{
+          color: #ffffff;
+          &::before{
+            width: 15px;
+            height: 15px;
+            background: #149A03;
+            position: absolute;
+            content: '';
+            bottom: 10px;
+            border-radius: 30px;
+            animation: before 0.2s linear;
+            @include media(992){
+              bottom: 0;
+              width: 100%;
+              height: 4px;
+              animation: unset;
+            }
+          }
+        }
+      }
+    }
+    &__open{
+      background: transparent;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 30px;
+      color: #ffffff;
+      display: none;
+    }
+    &__close{
+      background: transparent;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 30px;
+      color: #ffffff;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      display: none;
+    }
+    &__open, &__close{
+      @include media(992){
+        display: flex;
+      }
+    }
+  }
+}
+@keyframes before {
+  0%{bottom: -30px;}
+  100%{bottom: 10px;}
+}

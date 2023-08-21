@@ -1,0 +1,34 @@
+:root{
+  --m: 'Montserrat';
+  --r: 'Raleway';
+  --i: 'Inter'
+}
+$m: var(--m);
+$r: var(--r);
+$i: var(--i);
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: $r;
+  font-weight: 400;
+}
+.container{
+  border: 1px solid red;
+  @include container();
+}
+body{background:#141414; color:#ffffff}
+
+.btn-more{
+  padding: 10px 15px;
+  display: inline-flex;
+  gap: 15px;
+  font-size: 20px;
+  color: #ffffff;
+  align-items: center;
+  background: #149A03;
+  border-radius: 10px;
+  line-height: 30px;
+}
