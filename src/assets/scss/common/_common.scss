@@ -16,7 +16,7 @@ $i: var(--i);
   font-weight: 400;
 }
 .container{
-  border: 1px solid red;
+  // border: 1px solid red;
   @include container();
 }
 body{background:#141414; color:#ffffff}
